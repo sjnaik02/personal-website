@@ -1,6 +1,7 @@
 ---
 import BlogPost from "../components/BlogPost.astro";
 import Project from "../components/Project.astro";
+import projects from "../lib/projects.js";
 ---
 
 <html lang="en">
@@ -55,51 +56,45 @@ import Project from "../components/Project.astro";
         <h2 class="text-2xl font-semibold text-pink-500">Projects</h2>
         <hr class="my-2 border-neutral-600" />
         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-          <Project
-            title="Example Project 1"
-            link="/"
-            description="Description of example project of a moderate length to explain but not overexplain the point"
-          />
-          <Project
-            title="Example Project 2"
-            link="/"
-            description="Description of example project of a moderate length to explain but not overexplain the point"
-          />
-          <Project
-            title="Example Project 3"
-            link="/"
-            description="Description of example project of a moderate length to explain but not overexplain the point"
-          />
+          {
+            projects.map((project) => (
+              <Project
+                title={project.title}
+                description={project.description}
+                link={project.link}
+              />
+            ))
+          }
         </div>
-      </section>
-      <section class="mt-4">
-        <h2 class="text-2xl font-semibold text-emerald-600">Blog</h2>
-        <hr class="my-2 border-neutral-600" />
-        <BlogPost title="Example Blogpost 1" date="2023-08-16" link="/" />
-        <BlogPost title="Example Blogpost 2" date="2023-08-16" link="/" />
-        <BlogPost title="Example Blogpost 3" date="2023-08-16" link="/" />
+        <section class="mt-4">
+          <h2 class="text-2xl font-semibold text-emerald-600">Blog</h2>
+          <hr class="my-2 border-neutral-600" />
+          <BlogPost title="Example Blogpost 1" date="2023-08-16" link="/" />
+          <BlogPost title="Example Blogpost 2" date="2023-08-16" link="/" />
+          <BlogPost title="Example Blogpost 3" date="2023-08-16" link="/" />
+        </section>
       </section>
     </main>
+
+    <style is:global>
+      @font-face {
+        font-family: "Satoshi-Variable";
+        src: url("../fonts/Satoshi-Variable.woff2") format("woff2"),
+          url("../fonts/Satoshi-Variable.woff") format("woff"),
+          url("../fonts/Satoshi-Variable.ttf") format("truetype");
+        font-weight: 300 900;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Necto-Mono";
+        src: url("../fonts/Necto-Mono.woff2") format("woff2"),
+          url("../fonts/Necto-Mono.woff") format("woff");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 300 900;
+      }
+    </style>
   </body>
-
-  <style is:global>
-    @font-face {
-      font-family: "Satoshi-Variable";
-      src: url("../fonts/Satoshi-Variable.woff2") format("woff2"),
-        url("../fonts/Satoshi-Variable.woff") format("woff"),
-        url("../fonts/Satoshi-Variable.ttf") format("truetype");
-      font-weight: 300 900;
-      font-display: swap;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: "Necto-Mono";
-      src: url("../fonts/Necto-Mono.woff2") format("woff2"),
-        url("../fonts/Necto-Mono.woff") format("woff");
-      font-display: swap;
-      font-style: normal;
-      font-weight: 300 900;
-    }
-  </style>
 </html>
