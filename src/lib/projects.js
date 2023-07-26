@@ -13,7 +13,7 @@ const projects = [
     github: "https://github.com/sjnaik02/personal-website",
   },
   {
-    title: "Tilde",
+    title: "tilde",
     description:
       "A simple, minimalistic and fast markdown note taking platform. Built with NextJS, Tailwind, and next-auth.",
     link: "https://tilde.shouryanaik.com",
