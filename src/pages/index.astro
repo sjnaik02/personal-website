@@ -7,11 +7,11 @@ import projects from "../lib/projects.js";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-white.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="Shourya Naik's personal website" />
     <meta name="generator" content={Astro.generator} />
-    <title>shourya naik</title>
+    <title>shourya naik | home</title>
   </head>
   <body class="bg-neutral-950 text-neutral-50 lowercase">
     <main class="container mx-auto max-w-3xl px-6 flex flex-col">
@@ -104,21 +104,23 @@ import projects from "../lib/projects.js";
 
 <script>
   const letters = "abcdefghijklmnopqrstuvwxyz";
-  document.querySelector("h1").onmouseover = (event: any) => {
+  const heading = document.querySelector("h1");
+
+  window.onload = () => {
+    //do the random text effect on heading
     let iterations = 0;
     const interval = setInterval(() => {
-      event.target.innerText = event.target.innerText
+      heading.innerText = heading.innerText
         .split("")
         .map((letter, index) => {
           if (letter === " ") return letter;
           if (index < iterations) {
-            return event.target.dataset.value[index];
+            return heading.dataset.value[index];
           }
           return letters[Math.floor(Math.random() * 26)];
         })
         .join("");
-      if (iterations > event.target.dataset.value.length)
-        clearInterval(interval);
+      if (iterations > heading.dataset.value.length) clearInterval(interval);
       iterations += 1 / 3;
     }, 30);
   };
