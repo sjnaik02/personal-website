@@ -3,19 +3,25 @@ interface Props {
   name: string;
   description: string;
   link: string;
+  image?: string;
 }
 
-const { name, description, link } = Astro.props;
+const { name, description, link, image } = Astro.props;
 ---
 
 <a
   href={link}
-  class="flex flex-col gap-2 hover:bg-blue-50 p-4 rounded-lg transition-colors border border-blue-200 font-sans"
+  class="flex flex-col gap-2 p-4 rounded-lg transition-all hover:translate-x-1 border border-neutral-200 bg-white/50 backdrop-blur-sm"
 >
-  <h3 class="text-xl text-blue-600 font-bold">
+  {
+    image && (
+      <img src={image} alt={name} class="w-full h-32 object-cover rounded-md" />
+    )
+  }
+  <h3 class="text-lg font-medium text-neutral-900">
     {name}
   </h3>
-  <p class="font-sans leading-relaxed">
+  <p class="text-sm text-neutral-600 leading-relaxed">
     {description}
   </p>
 </a>
