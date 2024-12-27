@@ -3,25 +3,45 @@ interface Props {
   name: string;
   description: string;
   link: string;
-  image?: string;
+  type: "technical" | "case-study" | "work" | "research";
+  role?: string;
+  company?: string;
 }
 
-const { name, description, link, image } = Astro.props;
+const { name, description, link, type, role, company } = Astro.props;
+
+const typeColors = {
+  technical: "bg-purple-100 text-purple-800",
+  "case-study": "bg-amber-100 text-amber-800",
+  work: "bg-emerald-100 text-emerald-800",
+  research: "bg-sky-100 text-sky-800",
+};
 ---
 
 <a
   href={link}
-  class="flex flex-col gap-2 p-4 rounded-lg transition-all hover:translate-x-1 border border-neutral-200 bg-white/50 backdrop-blur-sm"
+  class="flex flex-col gap-3 p-4 rounded-lg transition-all hover:translate-x-1 border border-neutral-200 bg-white/50 backdrop-blur-sm"
 >
-  {
-    image && (
-      <img src={image} alt={name} class="w-full h-32 object-cover rounded-md" />
-    )
-  }
-  <h3 class="text-lg font-medium text-neutral-900">
-    {name}
-  </h3>
-  <p class="text-sm text-neutral-600 leading-relaxed">
-    {description}
-  </p>
+  <div class="flex flex-col gap-2">
+    <div class="flex items-start justify-between">
+      <div class="flex flex-col gap-1">
+        <h3 class="text-lg font-medium text-neutral-900">
+          {name}
+        </h3>
+        <div class="text-sm text-neutral-600">
+          {role && <span>{role}</span>}
+          {role && company && <span> · </span>}
+          {company && <span>{company}</span>}
+          {!role && !company && <span>Independent Project</span>}
+        </div>
+      </div>
+      <span class={`text-xs px-2 py-1 rounded-full ${typeColors[type]}`}>
+        {type}
+      </span>
+    </div>
+
+    <p class="text-sm text-neutral-600 leading-relaxed">
+      {description}
+    </p>
+  </div>
 </a>

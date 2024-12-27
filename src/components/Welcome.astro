@@ -4,26 +4,35 @@ import Timeline from "./Timeline.astro";
 const timelineData = [
   {
     date: "2023 - Present",
-    name: "Project 1",
-    description: "Description of project 1 goes here",
-    link: "#",
+    name: "Tangle News",
+    type: "work" as const,
+    description:
+      "Leading product development and growth initiatives for a news aggregation platform focused on delivering personalized content to users.",
+    link: "/projects/tangle-news",
+    role: "Product Manager",
+    company: "Tangle News",
   },
   {
     date: "2022 - 2023",
-    name: "Project 2",
-    description: "Description of project 2 goes here",
-    link: "#",
+    name: "User Engagement Analysis",
+    type: "case-study" as const,
+    description:
+      "Deep dive into user behavior patterns and engagement metrics for a social media platform.",
+    link: "/case-studies/user-engagement",
+    role: "Product Analyst",
   },
   {
-    date: "2021 - 2022",
-    name: "Project 3",
-    description: "Description of project 3 goes here",
-    link: "#",
+    date: "2022 - 2023",
+    name: "Campus Connect",
+    type: "technical" as const,
+    description:
+      "A machine learning-powered recommendation system for campus events and activities.",
+    link: "/projects/campus-connect",
   },
 ];
 ---
 
-<main class="bg-grid w-full px-4">
+<main class="bg-grid w-full px-4 overflow-y-scroll bg-fixed">
   <div
     class="flex flex-col container max-w-3xl h-screen mx-auto gap-4 font-sans"
   >
