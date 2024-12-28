@@ -1,21 +1,10 @@
 ---
-interface Props {
-  name: string;
-  description: string;
-  link: string;
-  type: "technical" | "case-study" | "work" | "research";
-  role?: string;
-  company?: string;
-}
+import type { TimelineItem, TimelineItemType } from "../types/timeline";
+import { typeColors } from "../types/timeline";
+
+type Props = Omit<TimelineItem, "date">;
 
 const { name, description, link, type, role, company } = Astro.props;
-
-const typeColors = {
-  technical: "bg-purple-100 text-purple-800",
-  "case-study": "bg-amber-100 text-amber-800",
-  work: "bg-emerald-100 text-emerald-800",
-  research: "bg-sky-100 text-sky-800",
-};
 ---
 
 <a
@@ -35,11 +24,12 @@ const typeColors = {
           {!role && !company && <span>Independent Project</span>}
         </div>
       </div>
-      <span class={`text-xs px-2 py-1 rounded-full ${typeColors[type]}`}>
+      <span
+        class={`text-xs px-2 py-1 rounded-full uppercase ${typeColors[type]}`}
+      >
         {type}
       </span>
     </div>
-
     <p class="text-sm text-neutral-600 leading-relaxed">
       {description}
     </p>

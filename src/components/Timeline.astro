@@ -1,29 +1,19 @@
 ---
-interface TimelineItem {
-  date: string;
-  name: string;
-  description: string;
-  link: string;
-  type: "technical" | "case-study" | "work" | "research";
-  role?: string;
-  company?: string;
-}
+import type { TimelineItem } from "../types/timeline";
+import ProjectCard from "./ProjectCard.astro";
 
 interface Props {
   items: TimelineItem[];
 }
 
-import ProjectCard from "./ProjectCard.astro";
 const { items } = Astro.props;
 ---
 
 <div class="flex flex-col gap-8 max-w-xl relative">
-  {/* Timeline line with solid style */}
   <div
     class="absolute top-[12px] h-[calc(100%-12px)] -mb-[48px] left-[7px] border-l border-black"
   >
   </div>
-
   {
     items.map((item) => (
       <div class="flex gap-4">

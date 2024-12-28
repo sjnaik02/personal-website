@@ -1,33 +1,34 @@
 ---
 import Timeline from "./Timeline.astro";
+import type { TimelineItem } from "../types/timeline";
 
-const timelineData = [
+const timelineData: TimelineItem[] = [
   {
     date: "2023 - Present",
-    name: "Tangle News",
+    name: "Example Company A",
     type: "work" as const,
     description:
-      "Leading product development and growth initiatives for a news aggregation platform focused on delivering personalized content to users.",
-    link: "/projects/tangle-news",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    link: "/projects/example-a",
     role: "Product Manager",
-    company: "Tangle News",
+    company: "Example Company A",
   },
   {
     date: "2022 - 2023",
-    name: "User Engagement Analysis",
-    type: "case-study" as const,
+    name: "Sample Case Study",
+    type: "personal project" as const,
     description:
-      "Deep dive into user behavior patterns and engagement metrics for a social media platform.",
-    link: "/case-studies/user-engagement",
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    link: "/case-studies/sample",
     role: "Product Analyst",
   },
   {
     date: "2022 - 2023",
-    name: "Campus Connect",
-    type: "technical" as const,
+    name: "Demo Project",
+    type: "blog" as const,
     description:
-      "A machine learning-powered recommendation system for campus events and activities.",
-    link: "/projects/campus-connect",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    link: "/projects/demo",
   },
 ];
 ---
