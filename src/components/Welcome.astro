@@ -1,41 +1,43 @@
 ---
 import Timeline from "./Timeline.astro";
 import type { TimelineItem } from "../types/timeline";
-
-const timelineData: TimelineItem[] = [
+export const timelineData: TimelineItem[] = [
   {
-    date: "2023 - Present",
-    name: "Example Company A",
-    type: "work" as const,
+    date: "July 2024 - Present",
+    name: "Growth & Tech @ Tangle News",
+    type: "work",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    link: "/projects/example-a",
-    role: "Product Manager",
-    company: "Example Company A",
+      "As a Growth and Tech Intern, I built a custom survey platform that reduced SaaS costs by 90% while serving 250K+ users. Stack: Next.js, TypeScript, PostgreSQL",
+    link: "/experience/tangle-news",
+    role: "Growth & Product Intern",
+    company: "Tangle News",
   },
   {
-    date: "2022 - 2023",
-    name: "Sample Case Study",
-    type: "personal project" as const,
+    date: "April 2024 - Present",
+    name: "BITS Pilani Placement Unit",
+    type: "college org",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    link: "/case-studies/sample",
-    role: "Product Analyst",
+      "Selected as 1 of 7 from 800+ students to lead placement operations across 3 campuses",
+    link: "/experience/bits-placement",
+    role: "Placement Coordinator",
+    company: "BITS Pilani - Goa Campus",
   },
   {
-    date: "2022 - 2023",
-    name: "Demo Project",
-    type: "blog" as const,
+    date: "June 2023 - July 2024",
+    name: "TEDxBITSGoa",
+    type: "college org",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    link: "/projects/demo",
+      "Led India's oldest institutional TEDx conference, orchestrating its largest-ever merchandise initiative",
+    link: "/experience/tedx",
+    role: "Chief Coordinator",
+    company: "BITS Pilani - Goa Campus",
   },
 ];
 ---
 
-<main class="bg-grid w-full px-4 overflow-y-scroll bg-fixed">
+<main class="bg-grid w-full px-4 overflow-y-scroll bg-fixed pb-12">
   <div
-    class="flex flex-col container max-w-3xl h-screen mx-auto gap-4 font-sans"
+    class="flex flex-col container max-w-2xl h-screen mx-auto gap-4 font-sans"
   >
     <h1 class="text-4xl mt-8 font-serif">Hi, I'm Shourya Naik</h1>
     <p class="text-xl leading-relaxed text-neutral-600">

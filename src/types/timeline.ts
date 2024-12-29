@@ -1,4 +1,9 @@
-export type TimelineItemType = "blog" | "books" | "personal project" | "work";
+export type TimelineItemType =
+  | "blog"
+  | "books"
+  | "personal project"
+  | "work"
+  | "college org";
 
 export interface TimelineItem {
   date: string;
@@ -11,8 +16,10 @@ export interface TimelineItem {
 }
 
 export const typeColors: Record<TimelineItemType, string> = {
-  blog: "bg-purple-100 text-purple-800",
-  books: "bg-amber-100 text-amber-800",
-  "personal project": "bg-emerald-100 text-emerald-800",
-  work: "bg-sky-100 text-sky-800",
+  blog: "bg-purple-50 text-purple-700 group-hover:bg-purple-100",
+  books: "bg-amber-50 text-amber-700 group-hover:bg-amber-100",
+  "personal project":
+    "bg-emerald-50 text-emerald-700 group-hover:bg-emerald-100",
+  work: "bg-sky-50 text-sky-700 group-hover:bg-sky-100",
+  "college org": "bg-rose-50 text-rose-700 group-hover:bg-rose-100",
 };
