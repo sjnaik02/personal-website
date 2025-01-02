@@ -6,3 +6,7 @@ Reach me at
 Email: hello@shouryanaik.com
 X/Twitter: https://x.com/sjnaik02
 LinkedIn: https://www.linkedin.com/in/shourya-naik/
+
+TODO:
+
+- [ ] Add a blog
