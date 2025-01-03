@@ -10,3 +10,4 @@ LinkedIn: https://www.linkedin.com/in/shourya-naik/
 TODO:
 
 - [ ] Add a blog
+- [ ] Write case studies
