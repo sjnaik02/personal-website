@@ -12,3 +12,5 @@ TODO:
 - [ ] Add a blog
 - [ ] Write case studies
 - [ ] Animated Demo Case studies
+
+- [ ] Add homepage animation
