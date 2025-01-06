@@ -14,3 +14,4 @@ TODO:
 - [ ] Animated Demo Case studies
 
 - [ ] Add homepage animation
+- [x] take a day off
