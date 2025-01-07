@@ -15,3 +15,4 @@ TODO:
 
 - [ ] Add homepage animation
 - [x] take a day off
+- [ ] figure out a way to add professional experience
